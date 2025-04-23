@@ -1,8 +1,8 @@
-// src/api/authApi.ts
-import axiosInstance from './axiosInstance';
+import axios from "axios";
+import { Endpoints } from "./endpoints";
 
 export const login = async (email: string, password: string) => {
-  const response = await axiosInstance.post('/auth/login', { email, password });
+  const response = await axios.post(Endpoints.Auth.Login, { email, password });
   return response.data; // Assume API returns user data and token
 };
 
@@ -12,6 +12,6 @@ export const logout = () => {
 };
 
 export const fetchCurrentUser = async () => {
-  const response = await axiosInstance.get('/auth/me');
+  const response = await axios.get('/auth/me');
   return response.data; // Return user details
 };
