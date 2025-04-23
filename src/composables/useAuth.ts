@@ -1,5 +1,5 @@
+import axios from 'axios';
 import { ref, computed } from 'vue';
-import axiosInstance from '../api/axiosInstance';
 
 export function useAuth() {
   const user = ref(JSON.parse(localStorage.getItem('user') || '{}')); // Retrieve user from localStorage
@@ -21,7 +21,7 @@ export function useAuth() {
     const token = localStorage.getItem('token');
     if (token) {
       // Optionally refetch user details from API
-      const response = await axiosInstance.get('/auth/me', {
+      const response = await axios.get('/auth/me', {
         headers: { Authorization: `Bearer ${token}` },
       });
       user.value = response.data;

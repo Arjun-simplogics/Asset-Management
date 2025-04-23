@@ -17,8 +17,6 @@ export const priceRegex = /^[0-9]+$/;
 
 export const quantityRegex = /^[0-9]+((,|\.)?[0-9])*\s?(g|kg|Kg|KG|ml|L|個|キログラム|グラム)?$/;
 
-export const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
-
 export const phoneNumberRegex = /^(?:\+\d{1,3})?\d{10,}$/;
 
 export const numberRegex = /^[0-9]+$/;
@@ -36,4 +34,16 @@ export enum SessionStorageKeys {
 export enum Roles {
 	ADMIN = "ADMIN",
 	USER = "USER",
+}
+export const dateFormat = "YYYY/MM/DD";
+export const apiDateFormat = "YYYY-MM-DD";
+export const dateTimeFormat = "YYYY/MM/DD HH:mm";
+
+export const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+export const integerRegex = /^\d*$/;
+export const onlyPositiveNumbers = /^(0|[1-9]\d*)$/;
+
+export enum LocalStorageKeys {
+	TOKEN = "TOKEN",
+	ROLE = "ROLE",
 }
