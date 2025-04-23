@@ -1,0 +1,16 @@
+.custom_div {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+  &.open {
+    background-color: #379fad;
+  }
+  .one {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    &.open {
+      background-color: #379fad;
+    }
+  }
+}
