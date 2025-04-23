@@ -1,4 +1,3 @@
-
 export enum Language {
 	ENGLISH = "en",
 	JAPANESE = "ja",
