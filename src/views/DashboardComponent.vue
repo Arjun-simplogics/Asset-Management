@@ -1,9 +1,7 @@
 <template>
   <h1>Dashboard</h1>
   <!-- 100 div with one word -->
-   <div>qwertyu</div>
-   <div>qwertyu</div>
-   <div>qwertyu</div>
+  <el-button type="primary">Primary Button</el-button>
    <div>qwertyu</div>
    <div>qwertyu</div>
    <div>qwertyu</div>
