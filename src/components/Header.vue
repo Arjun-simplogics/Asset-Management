@@ -57,7 +57,7 @@
 import { defineComponent, ref } from "vue";
 
 export default defineComponent({
-	name: "Header",
+	name: "TemplateHeader",
 	setup() {
 		// State with explicit type
 		const isMobileMenuOpen = ref<boolean>(false);
