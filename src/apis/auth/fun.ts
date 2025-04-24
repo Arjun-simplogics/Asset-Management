@@ -4,7 +4,7 @@ import {
   AuthSuccessResponse,
   AuthFailureResponse,
 } from "./interface.ts";
-import { RESPONSE_ERROR_CUSTOM_STATUS } from "@/apis/client";
+// import { RESPONSE_ERROR_CUSTOM_STATUS } from "@/apis/client";
 import { Endpoints } from "../endpoints.ts";
 import { axiosConfig } from "../../utils/utils.fns.ts";
 
@@ -25,15 +25,15 @@ export const signIn = async (
     if (!(err instanceof AxiosError)) {
       throw err;
     }
-    const errResponse =
-      err.response && err.response.status === RESPONSE_ERROR_CUSTOM_STATUS
-        ? err.response
-        : undefined;
-    if (!errResponse) {
-      throw err;
-    }
+    // const errResponse =
+    //   err.response && err.response.status === RESPONSE_ERROR_CUSTOM_STATUS
+    //     ? err.response
+    //     : undefined;
+    // if (!errResponse) {
+    //   throw err;
+    // }
     return {
-      failureResponse: errResponse.data as AuthFailureResponse,
+    //   failureResponse: errResponse.data as AuthFailureResponse,
     };
   }
 };
