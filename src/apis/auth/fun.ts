@@ -2,35 +2,23 @@ import axios, { AxiosError } from "axios";
 import { AuthResponse, AuthSuccessResponse, AuthFailureResponse } from "./interface.ts";
 // import { RESPONSE_ERROR_CUSTOM_STATUS } from "@/apis/client";
 import { Endpoints } from "../endpoints.ts";
-import { axiosConfig } from "../../utils/utils.fns.ts";
+import { axiosConfig, showError } from "../../utils/utils.fns.ts";
 
 export const signIn = async (email: string, password: string): Promise<AuthResponse> => {
 	try {
-		const response = await axios.post(
-			Endpoints.Auth.Login,
-			{
-				email: email,
-				password: password,
-			},
-			axiosConfig()
-		);
+		const response = await axios.post(Endpoints.Auth.Login, { email, password }, axiosConfig());
 		return {
 			sucResponse: response.data as AuthSuccessResponse,
 		};
 	} catch (err) {
-		if (!(err instanceof AxiosError)) {
+		if (err instanceof AxiosError && err.response) {
+			const msg = err.response.data?.message || "Login failed. Please try again.";
+			showError(msg);
+			return {};
+		} else {
+			showError("An unexpected error occurred.");
 			throw err;
 		}
-		// const errResponse =
-		//   err.response && err.response.status === RESPONSE_ERROR_CUSTOM_STATUS
-		//     ? err.response
-		//     : undefined;
-		// if (!errResponse) {
-		//   throw err;
-		// }
-		return {
-			//   failureResponse: errResponse.data as AuthFailureResponse,
-		};
 	}
 };
 

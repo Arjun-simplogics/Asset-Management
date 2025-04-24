@@ -38,6 +38,6 @@ export const axiosMultiPartConfig = (): AxiosRequestConfig => ({
 	headers: {
 		"Authorization": `Bearer ${sessionStorage.getItem(LocalStorageKeys.TOKEN)}`,
 		"Accept-Language": Config.defaultLanguage,
-		"Content-Type": "multpart/form-data",
+		"Content-Type": "multipart/form-data",
 	},
 });
