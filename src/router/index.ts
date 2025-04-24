@@ -1,21 +1,23 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Layout from "../components/Layout.vue";
+import { useAuth } from "../composables/useAuth";
+import { Locations } from "../constants/locations";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
-    component: Layout, // Layout with Header, Sidebar, and Footer
+    path: Locations.BASE,
+    component: Layout, 
     children: [
       {
-        path: "",
+        path: Locations.ADMIN_HOME,
         name: "Dashboard",
         component: () => import("../views/DashboardComponent.vue"), // Lazy-loaded Dashboard component
-        meta: { title: "Dashboard" },
+        meta: { title: "Dashboard",requiresAuth: true },
       },
     ],
   },
   {
-    path: "/login",
+    path: Locations.LOGIN,
     name: "Login",
     component: () => import("../views/Login.vue"), // Login page outside of the Layout
     meta: { title: "Login" },
@@ -33,10 +35,16 @@ const router = createRouter({
   routes,
 });
 
-// Update document title based on route metadata
+
 router.beforeEach((to, from, next) => {
-  document.title = to.meta.title || "My Application";
-  next();
+  const { isAuthenticated } = useAuth()
+  if (to.meta.requiresAuth && !isAuthenticated) {
+    next({ path: Locations.LOGIN })
+  } else if ((to.path === '/login' || to.path === '/forgot-password') && isAuthenticated) {
+    next({ path: Locations.BASE }) 
+  } else {
+    next()
+  }
 });
 
 export default router;
