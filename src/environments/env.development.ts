@@ -1,4 +1,3 @@
 export default {
-    apiBaseURL: 'https://dev.api.example.com',
-  };
-  
+	apiBaseURL: "https://dev.api.example.com",
+};

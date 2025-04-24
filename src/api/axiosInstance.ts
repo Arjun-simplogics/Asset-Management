@@ -1,27 +1,28 @@
-import axios, {  AxiosResponse, InternalAxiosRequestConfig } from 'axios';
-import { showError, showSucess } from '../utils/utils.fns';
-import { LocalStorageKeys } from '../constants';
-import { Locations } from '../constants/locations';
-import { logout } from './authApi';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import axios, { AxiosResponse, InternalAxiosRequestConfig } from "axios";
+import { showError, showSucess } from "../utils/utils.fns";
+import { LocalStorageKeys } from "../constants";
+import { Locations } from "../constants/locations";
+import { logout } from "./authApi";
 
 // Attach token to each request using an interceptor
 axios.interceptors.request.use(
-  function (config: InternalAxiosRequestConfig) {
-    return config;
-  },
-  function (error) {
-    return Promise.reject(error);
-  }
+	function (config: InternalAxiosRequestConfig) {
+		return config;
+	},
+	function (error) {
+		return Promise.reject(error);
+	}
 );
 
 // Handle response errors globally (e.g., unauthorized or expired token)
 axios.interceptors.response.use(
-  (response) => {
-    return handleResponse(response);
-  },
-  (error) => {
-    return handleResponse(error.response);
-  }
+	(response) => {
+		return handleResponse(response);
+	},
+	(error) => {
+		return handleResponse(error.response);
+	}
 );
 
 const handleResponse = (response: AxiosResponse<any, any>) => {
@@ -80,4 +81,3 @@ const handleResponse = (response: AxiosResponse<any, any>) => {
 	}
 	return response;
 };
-
