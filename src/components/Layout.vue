@@ -1,16 +1,12 @@
 <template>
-	<div class="flex flex-col h-screen">
-		<!-- Header -->
-		<div class="h-16">
-			<TemplateHeader />
-		</div>
+	<div class="flex h-screen">
+		<TemplateSidebar />
 
-		<!-- Main Content -->
-		<div class="flex flex-1 overflow-hidden">
-			<!-- Sidebar -->
-			<TemplateSidebar />
+		<div class="flex flex-col flex-1 overflow-hidden">
+			<div class="h-16">
+				<TemplateHeader />
+			</div>
 
-			<!-- Main Content -->
 			<main class="flex-1 overflow-auto p-6 bg-gray-200">
 				<router-view />
 			</main>

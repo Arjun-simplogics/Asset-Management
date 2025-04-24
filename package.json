@@ -9,8 +9,8 @@
     "preview": "vite preview",
     "pretty:fix": "prettier --config ./.prettierrc --write \"src/**/*.{ts,vue,scss}\"",
     "pretty:check": "prettier --config ./.prettierrc --check \"src/**/*.{ts,vue,scss}\"",
-    "lint:check": "eslint -c ./.eslintrc.cjs \"src/**/*.{ts,vue}\"",
-    "lint:fix": "eslint --fix -c ./.eslintrc.cjs \"src/**/*.{ts,vue}\""
+    "lint:check": "eslint -c ./.eslintrc.json \"src/**/*.{ts,vue}\"",
+    "lint:fix": "eslint --fix -c ./.eslintrc.json \"src/**/*.{ts,vue}\""
   },
   "dependencies": {
     "axios": "^1.7.9",
