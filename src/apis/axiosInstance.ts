@@ -3,7 +3,7 @@ import axios, { AxiosResponse, InternalAxiosRequestConfig } from "axios";
 import { showError, showSucess } from "../utils/utils.fns";
 import { LocalStorageKeys } from "../constants";
 import { Locations } from "../constants/locations";
-import { logout } from "./authApi";
+// import { logout } from "./authApi";
 
 // Attach token to each request using an interceptor
 axios.interceptors.request.use(
@@ -38,7 +38,7 @@ const handleResponse = (response: AxiosResponse<any, any>) => {
 		return Promise.reject(response);
 	}
 	if (response && response.status && [403].includes(response.status)) {
-		logout();
+		// logout();
 		showError(response.data && response.data.message ? response.data.message : "FORBIDDEN");
 		window.location.href = Locations.LOGIN;
 		return Promise.reject(response);

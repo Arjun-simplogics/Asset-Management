@@ -1,7 +1,7 @@
-import { AxiosRequestConfig } from "axios"
-import { ElNotification } from "element-plus"
-import { LocalStorageKeys } from "../constants"
-import { Config } from "../config"
+import { AxiosRequestConfig } from "axios";
+import { ElNotification } from "element-plus";
+import { LocalStorageKeys } from "../constants";
+import { Config } from "../config";
 
 export const showError = (msg: string): void => {
 	ElNotification.error({
