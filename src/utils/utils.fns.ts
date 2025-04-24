@@ -3,29 +3,29 @@ import { ElNotification } from "element-plus"
 import { LocalStorageKeys } from "../constants"
 import { Config } from "../config"
 
-export const showError = (msg: string):void => {
-    ElNotification.error({
-        message: msg,
-    })
-}
+export const showError = (msg: string): void => {
+	ElNotification.error({
+		message: msg,
+	});
+};
 
-export const showSucess = (msg: string):void => {
-    ElNotification.success({
-        message: msg,
-    })
-}
+export const showSucess = (msg: string): void => {
+	ElNotification.success({
+		message: msg,
+	});
+};
 
-export const showWarning = (msg: string):void => {
-    ElNotification.warning({
-        message: msg,
-    })
-}
+export const showWarning = (msg: string): void => {
+	ElNotification.warning({
+		message: msg,
+	});
+};
 
-export const showInfo = (msg: string):void => {
-    ElNotification.info({
-        message: msg,
-    })
-}
+export const showInfo = (msg: string): void => {
+	ElNotification.info({
+		message: msg,
+	});
+};
 
 export const axiosConfig = (): AxiosRequestConfig => ({
 	headers: {

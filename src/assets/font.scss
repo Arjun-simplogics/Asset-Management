@@ -1,0 +1,53 @@
+@font-face {
+	font-family: "black";
+	src: url("./fonts/Roboto-Black.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "bold";
+	src: url("./fonts/Roboto-Bold.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "regular";
+	src: url("./fonts/Roboto-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "light";
+	src: url("./fonts/Roboto-Light.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "medium";
+	src: url("./fonts/Roboto-Medium.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "arvo-regular";
+	src: url("./fonts/Arvo-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+html {
+	body {
+		font-family: "regular";
+		font-size: 14px;
+
+		.font_medium {
+			font-family: "medium";
+		}
+		.font_bold {
+			font-family: "bold";
+		}
+		.font_regular {
+			font-family: "regular" !important;
+		}
+	}
+}

@@ -31,8 +31,8 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL), // Modern History API
-  routes,
+	history: createWebHistory(import.meta.env.BASE_URL), // Modern History API
+	routes,
 });
 
 
