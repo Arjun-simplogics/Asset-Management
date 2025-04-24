@@ -1,5 +1,5 @@
 import axios, { AxiosError } from "axios";
-import { AuthResponse, AuthSuccessResponse, AuthFailureResponse } from "./interface.ts";
+import { AuthResponse, AuthSuccessResponse } from "./interface.ts";
 // import { RESPONSE_ERROR_CUSTOM_STATUS } from "@/apis/client";
 import { Endpoints } from "../endpoints.ts";
 import { axiosConfig, showError } from "../../utils/utils.fns.ts";

@@ -2,13 +2,13 @@
 	<div class="flex flex-col h-screen">
 		<!-- Header -->
 		<div class="h-16">
-			<Header />
+			<TemplateHeader />
 		</div>
 
 		<!-- Main Content -->
 		<div class="flex flex-1 overflow-hidden">
 			<!-- Sidebar -->
-			<Sidebar />
+			<TemplateSidebar />
 
 			<!-- Main Content -->
 			<main class="flex-1 overflow-auto p-6 bg-gray-200">
@@ -20,12 +20,12 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Header from "./Header.vue";
-import Sidebar from "./Sidebar.vue";
+import TemplateHeader from "./Header.vue";
+import TemplateSidebar from "./Sidebar.vue";
 
 export default defineComponent({
 	name: "Layout",
-	components: { Header, Sidebar },
+	components: { TemplateHeader, TemplateSidebar },
 });
 </script>
 
