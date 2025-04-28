@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios, { AxiosResponse, InternalAxiosRequestConfig } from "axios";
-import { showError, showSucess } from "../utils/utils.fns";
 import { LocalStorageKeys } from "../constants";
 import { Locations } from "../constants/locations";
+import { showError, showSucess } from "../plugins/utils/utils.fns";
 // import { logout } from "./authApi";
 
 // Attach token to each request using an interceptor
