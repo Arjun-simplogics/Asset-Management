@@ -1,5 +1,5 @@
 export enum Locations {
-	BASE = "/",
+	BASE = "",
 	LOGIN = "/login",
 	ADMIN_HOME = "/admin-home",
 	FORGOT_PASSWORD = "/forgot-password",
