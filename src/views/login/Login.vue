@@ -6,7 +6,7 @@
 					<div class="flex justify-center">
 						<img src="../assets/Aspial_logo.png" alt="Logo" class="h-16 w-16 object-contain" />
 					</div>
-					<h1 class="text-2xl font-semibold text-center text-gray-700 mt-4">Log In</h1>
+					<h1 class="text-2xl font-semibold text-center text-gray-700 mt-4 log_in_text">Log In</h1>
 					<form class="mt-6" @submit.prevent="handleSubmit">
 						<div class="mb-4">
 							<label for="email" class="block text-sm font-medium text-gray-600">Email</label>
@@ -105,6 +105,7 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import { Router, useRouter } from "vue-router";
+import "./login.scss";
 
 export default defineComponent({
 	name: "Login",

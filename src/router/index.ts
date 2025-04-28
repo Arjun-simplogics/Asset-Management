@@ -19,7 +19,7 @@ const routes: Array<RouteRecordRaw> = [
 	{
 		path: Locations.LOGIN,
 		name: "Login",
-		component: () => import("../views/Login.vue"), // Login page outside of the Layout
+		component: () => import("../views/login/Login.vue"), // Login page outside of the Layout
 		meta: { title: "Login" },
 	},
 	// {
